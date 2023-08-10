@@ -6,6 +6,7 @@ export const MessageRelations = relations(MessageTable, ({ one }) => ({
   sender: one(UserTable, {
     fields: [MessageTable.sender_id],
     references: [UserTable.id],
+    relationName: 'MessageSender',
   }),
 
   recipient: one(UserTable, {
@@ -15,5 +16,5 @@ export const MessageRelations = relations(MessageTable, ({ one }) => ({
 }))
 
 export const UserRelations = relations(UserTable, ({ many }) => ({
-  messages: many(MessageTable),
+  messages: many(MessageTable, { relationName: 'MessageSender' }),
 }))
