@@ -7,7 +7,7 @@ const connectionString = `mysql://${MYSQL_USER}:${MYSQL_PASS}@${MYSQL_HOST}:${MY
 
 export default {
   out: './drizzle',
-  schema: ['./src/question-1/db/controllers/schemas'],
+  schema: ['./src/question-1/db/schemas'],
 
   driver: 'mysql2',
   dbCredentials: {
